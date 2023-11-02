@@ -1,0 +1,29 @@
+<div class="header">
+  <h1>World Map</h1>
+</div>
+<div class="container">
+  <div class="left">
+    <app-world-map 
+    (capitalCityChange)="onCapitalCityChange($event)"
+    (countryNameChange)="onCountryNameChange($event)"
+    (countryRegionChange)="onCountryRegionChange($event)"
+    (incomeLevelChange)="onIncomeLevelChange($event)"
+    (latChange)="onLatChange($event)"
+    (longChange)="onLongChange($event)"
+    (lendingTypeChange)="onLendingTypeChange($event)"
+    ></app-world-map>
+  </div>
+  <div class="right">
+    <h1>Country Data</h1>
+    <ul>
+      <li *ngIf="countryName">Country Name: {{ countryName }}</li>
+      <li *ngIf="capitalCity">Capital City: {{ capitalCity }}</li>
+      <li *ngIf="countryRegion">Country Region: {{ countryRegion }}</li>
+      <li *ngIf="incomeLevel">Income Level: {{ incomeLevel }}</li>
+      <li *ngIf="lat">Latitude: {{ lat }}</li>
+      <li *ngIf="long">Longitude: {{ long }}</li>
+      <li *ngIf="lendingType">Lending Type: {{ lendingType }}</li>
+      <li *ngIf="!capitalCity">Click on a country for more information...</li>
+    </ul>
+  </div>
+</div>
